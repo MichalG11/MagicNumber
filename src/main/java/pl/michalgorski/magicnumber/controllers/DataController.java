@@ -27,8 +27,7 @@ class DataController {
 
     void createFilesData() {
 
-//        String rootPath = scanner.nextLine();
-        String rootPath = "D://magic_files";
+        String rootPath = scanner.nextLine();
 
         List<FileData> listWithFileData = new ArrayList<>();
 
