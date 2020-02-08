@@ -1,8 +1,19 @@
 package pl.michalgorski.magicnumber.models.file.service;
 
+import pl.michalgorski.magicnumber.models.file.data.FilePatternModel;
+
 import java.io.File;
+import java.util.Map;
 
 public class FileExtensionService {
+
+    private FilePatternModel filePatternModel;
+    private final Map<String, int[]> mapWithFilePattern;
+
+    public FileExtensionService() {
+        filePatternModel = new FilePatternModel();
+        mapWithFilePattern = filePatternModel.getMapWithFilePattern();
+    }
 
     String getExtensionOfFile(File file){
 
@@ -22,4 +33,6 @@ public class FileExtensionService {
         }
         return fileExtension.toUpperCase();
     }
+
+
 }

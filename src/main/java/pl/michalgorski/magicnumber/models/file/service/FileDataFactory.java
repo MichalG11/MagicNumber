@@ -10,12 +10,14 @@ import java.util.*;
 public class FileDataFactory {
 
     private ByteReadService byteReadService;
+    private RealExtensionService realExtensionService;
     private FileExtensionService fileExtensionService;
     private FilePatternModel filePatternModel;
     private final Map<String, int[]> mapWithFilePattern;
 
     public FileDataFactory() {
         byteReadService = new ByteReadService();
+        realExtensionService = new RealExtensionService();
         fileExtensionService = new FileExtensionService();
         filePatternModel = new FilePatternModel();
         mapWithFilePattern = filePatternModel.getMapWithFilePattern();
@@ -39,8 +41,9 @@ public class FileDataFactory {
         boolean isFileExtensionSupported = isFileExtensionSupported(fileExtension);
         byte[] realByteArray = byteReadService.getBytesOfFile(file);
 
-        String realExtension = getRealExtension(realByteArray).isEmpty() ? getRealExtensionForTxtFile(realByteArray)
-                : getRealExtension(realByteArray);
+        String realExtension = realExtensionService.getRealExtension(realByteArray).isEmpty()
+                                ? realExtensionService.getRealExtensionForTxtFile(realByteArray)
+                                : realExtensionService.getRealExtension(realByteArray);
 
         boolean isRealExtensionSupported = !realExtension.isEmpty();
 
@@ -50,44 +53,5 @@ public class FileDataFactory {
     private boolean isFileExtensionSupported(String fileExtension) {
 
         return mapWithFilePattern.containsKey(fileExtension);
-    }
-
-    private String getRealExtension(byte[] byteArray) {
-
-        String realExtension = "";
-
-        if (byteArray.length > 0) {
-            int lengthOfPatternArray = 3;
-            int[] realIntArray = new int[lengthOfPatternArray];
-
-            for (int i = 0; i < lengthOfPatternArray; i++) {
-                realIntArray[i] = Byte.toUnsignedInt(byteArray[i]);
-            }
-            for (Map.Entry<String, int[]> entry : mapWithFilePattern.entrySet()) {
-
-                if (Arrays.equals(realIntArray, entry.getValue())) {
-                    realExtension = entry.getKey();
-                    break;
-                }
-            }
-        }
-        return realExtension;
-    }
-
-    private String getRealExtensionForTxtFile(byte[] byteArray) {
-
-        String realExtension = "TXT";
-        int currentIntValue;
-        if (byteArray.length > 0) {
-            for (byte currentByteValue : byteArray) {
-                currentIntValue = Byte.toUnsignedInt(currentByteValue);
-
-                if (currentIntValue < 32 || currentIntValue > 127) {
-                    realExtension = "";
-                    break;
-                }
-            }
-        }
-        return realExtension;
     }
 }

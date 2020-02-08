@@ -6,7 +6,7 @@ import pl.michalgorski.magicnumber.models.file.service.FileExtensionService;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class TestFileExtensionService {
+class TestFileExtensionService {
 
     private static FileExtensionService fileExtensionService;
 

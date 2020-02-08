@@ -1,0 +1,13 @@
+pl\michalgorski\magicnumber\models\file\service\RealExtensionService.class
+pl\michalgorski\magicnumber\models\UnsupportedException.class
+pl\michalgorski\magicnumber\models\file\data\FileData.class
+pl\michalgorski\magicnumber\models\file\service\FileExtensionService.class
+pl\michalgorski\magicnumber\controllers\CheckExtensionController.class
+pl\michalgorski\magicnumber\models\file\data\FilePatternModel.class
+pl\michalgorski\magicnumber\controllers\DataController.class
+pl\michalgorski\magicnumber\models\file\service\ByteReadService.class
+pl\michalgorski\magicnumber\models\file\service\FileReadService.class
+pl\michalgorski\magicnumber\models\file\service\FileDataFactory.class
+pl\michalgorski\magicnumber\Starter.class
+pl\michalgorski\magicnumber\views\ConsoleTextCreator.class
+pl\michalgorski\magicnumber\controllers\ApplicationController.class
