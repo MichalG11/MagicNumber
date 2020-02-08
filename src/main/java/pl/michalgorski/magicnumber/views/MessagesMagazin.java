@@ -2,7 +2,7 @@ package pl.michalgorski.magicnumber.views;
 
 import pl.michalgorski.magicnumber.models.file.data.FileData;
 
-public class ConsoleTextCreator {
+public class MessagesMagazin {
 
     public void showFolderRequestText(){
         System.out.println("Podaj ścieżkę do folderu z plikami np.: \"D://folder/folder\": \n");

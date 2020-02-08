@@ -1,19 +1,19 @@
 package pl.michalgorski.magicnumber.controllers;
 
-import pl.michalgorski.magicnumber.views.ConsoleTextCreator;
+import pl.michalgorski.magicnumber.views.MessagesMagazin;
 
 public class ApplicationController {
 
-    private ConsoleTextCreator consoleTextCreator;
+    private MessagesMagazin messagesMagazin;
     private DataController dataController;
 
     public  ApplicationController(){
-        consoleTextCreator = new ConsoleTextCreator();
+        messagesMagazin = new MessagesMagazin();
         dataController = new DataController();
     }
 
     public void startApplication() {
-        consoleTextCreator.showFolderRequestText();
+        messagesMagazin.showFolderRequestText();
 
         dataController.createFilesData();
     }

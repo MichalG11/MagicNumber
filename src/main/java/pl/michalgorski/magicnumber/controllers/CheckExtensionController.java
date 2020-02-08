@@ -1,14 +1,14 @@
 package pl.michalgorski.magicnumber.controllers;
 
 import pl.michalgorski.magicnumber.models.file.data.FileData;
-import pl.michalgorski.magicnumber.views.ConsoleTextCreator;
+import pl.michalgorski.magicnumber.views.MessagesMagazin;
 
 class CheckExtensionController {
 
-    private ConsoleTextCreator consoleTextCreator;
+    private MessagesMagazin messagesMagazin;
 
     CheckExtensionController() {
-        consoleTextCreator = new ConsoleTextCreator();
+        messagesMagazin = new MessagesMagazin();
     }
 
     boolean checkExtensionsForFiles(FileData oneFileData, boolean isAlwaysCorrect){
@@ -20,14 +20,14 @@ class CheckExtensionController {
             if (isRealExtensionSupported){
                 checkBothExtensions(oneFileData);
             } else {
-                consoleTextCreator.fileExtSupportedRealExtUnsupported(oneFileData);
+                messagesMagazin.fileExtSupportedRealExtUnsupported(oneFileData);
                 isAlwaysCorrect = false;
             }
         } else {
             if (isRealExtensionSupported){
-                consoleTextCreator.fileExtUnsupportedRealExtSupported(oneFileData);
+                messagesMagazin.fileExtUnsupportedRealExtSupported(oneFileData);
             } else {
-                consoleTextCreator.bothExtUnsupported(oneFileData);
+                messagesMagazin.bothExtUnsupported(oneFileData);
             }
             isAlwaysCorrect = false;
         }
@@ -37,9 +37,9 @@ class CheckExtensionController {
     private void checkBothExtensions(FileData oneFileData) {
 
         if (oneFileData.getFileExtension().equals(oneFileData.getRealExtension())){
-            consoleTextCreator.bothExtSupportedAndTheSame(oneFileData);
+            messagesMagazin.bothExtSupportedAndTheSame(oneFileData);
         } else {
-            consoleTextCreator.bothExtSupportedBothDifferent(oneFileData);
+            messagesMagazin.bothExtSupportedBothDifferent(oneFileData);
 
         }
     }

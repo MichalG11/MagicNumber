@@ -7,6 +7,13 @@ import java.util.List;
 
 public class FileReadService {
 
+    /**
+     * The method reads a source folder path and creates a File list.
+     *
+     * @param rootPath
+     * @return
+     * @throws NullPointerException
+     */
     public List<File> createListWithFiles(String rootPath) throws NullPointerException{
 
         File directory = new File(rootPath);

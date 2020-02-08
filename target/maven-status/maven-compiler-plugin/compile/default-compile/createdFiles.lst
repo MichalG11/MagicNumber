@@ -8,6 +8,6 @@ pl\michalgorski\magicnumber\controllers\DataController.class
 pl\michalgorski\magicnumber\models\file\service\ByteReadService.class
 pl\michalgorski\magicnumber\models\file\service\FileReadService.class
 pl\michalgorski\magicnumber\models\file\service\FileDataFactory.class
+pl\michalgorski\magicnumber\views\MessagesMagazin.class
 pl\michalgorski\magicnumber\Starter.class
-pl\michalgorski\magicnumber\views\ConsoleTextCreator.class
 pl\michalgorski\magicnumber\controllers\ApplicationController.class

@@ -1,20 +1,15 @@
 package pl.michalgorski.magicnumber.models.file.service;
 
-import pl.michalgorski.magicnumber.models.file.data.FilePatternModel;
-
 import java.io.File;
-import java.util.Map;
 
 public class FileExtensionService {
 
-    private FilePatternModel filePatternModel;
-    private final Map<String, int[]> mapWithFilePattern;
-
-    public FileExtensionService() {
-        filePatternModel = new FilePatternModel();
-        mapWithFilePattern = filePatternModel.getMapWithFilePattern();
-    }
-
+    /**
+     * The method reads a file and returns a file extension.
+     *
+     * @param file
+     * @return
+     */
     String getExtensionOfFile(File file){
 
         String fileName = file.getName();

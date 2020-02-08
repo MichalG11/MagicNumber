@@ -23,6 +23,13 @@ public class FileDataFactory {
         mapWithFilePattern = filePatternModel.getMapWithFilePattern();
     }
 
+    /**
+     * The method reads a File list and creates a FileData list.
+     *
+     * @param listWithFiles
+     * @return
+     * @throws IOException
+     */
     public List<FileData> createFileDataList(List<File> listWithFiles) throws IOException {
 
         List<FileData> listWithFileData = new ArrayList<>();

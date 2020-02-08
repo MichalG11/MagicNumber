@@ -2,12 +2,12 @@ D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\models\file\ser
 D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\models\file\service\FileReadService.java
 D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\Starter.java
 D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\models\UnsupportedException.java
-D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\views\ConsoleTextCreator.java
 D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\models\file\data\FilePatternModel.java
 D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\models\file\data\FileData.java
 D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\controllers\ApplicationController.java
 D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\models\file\service\RealExtensionService.java
 D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\models\file\service\FileExtensionService.java
+D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\views\MessagesMagazin.java
 D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\models\file\service\FileDataFactory.java
 D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\controllers\CheckExtensionController.java
 D:\zadania\MagicNumber\src\main\java\pl\michalgorski\magicnumber\controllers\DataController.java
