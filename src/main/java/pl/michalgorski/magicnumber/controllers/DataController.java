@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class DataController {
+class DataController {
 
     private Scanner scanner;
     private FileReadService fileReadService;
@@ -24,7 +24,7 @@ public class DataController {
         checkExtensionController = new CheckExtensionController();
     }
 
-    public void createFilesData() {
+    void createFilesData() {
 
 //        String rootPath = scanner.nextLine();
         String rootPath = "D://magic_files";

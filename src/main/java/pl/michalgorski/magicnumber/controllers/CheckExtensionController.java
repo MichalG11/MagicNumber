@@ -3,7 +3,7 @@ package pl.michalgorski.magicnumber.controllers;
 import pl.michalgorski.magicnumber.models.file.data.FileData;
 import pl.michalgorski.magicnumber.views.ConsoleTextCreator;
 
-public class CheckExtensionController {
+class CheckExtensionController {
 
     private ConsoleTextCreator consoleTextCreator;
 
@@ -18,26 +18,29 @@ public class CheckExtensionController {
 
         if (isFileExtensionSupported){
             if (isRealExtensionSupported){
-                System.out.println("aaa");
+                checkBothExtensions(oneFileData);
             } else {
-                System.out.println("bbb");
+                consoleTextCreator.fileExtSupportedRealExtUnsupported(oneFileData);
+                isAlwaysCorrect = false;
             }
-
-
-
         } else {
             if (isRealExtensionSupported){
-                System.out.println("ccc");
+                consoleTextCreator.fileExtUnsupportedRealExtSupported(oneFileData);
             } else {
-                System.out.println("ddd");
+                consoleTextCreator.bothExtUnsupported(oneFileData);
             }
-
-
-
+            isAlwaysCorrect = false;
         }
         return isAlwaysCorrect;
     }
 
+    private void checkBothExtensions(FileData oneFileData) {
 
+        if (oneFileData.getFileExtension().equals(oneFileData.getRealExtension())){
+            consoleTextCreator.bothExtSupportedAndTheSame(oneFileData);
+        } else {
+            consoleTextCreator.bothExtSupportedBothDifferent(oneFileData);
 
+        }
+    }
 }
