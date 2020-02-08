@@ -14,7 +14,7 @@ public class FileDataFactory {
     private FilePatternModel filePatternModel;
     private final Map<String, int[]> mapWithFilePattern;
 
-    public FileDataFactory(){
+    public FileDataFactory() {
         byteReadService = new ByteReadService();
         fileExtensionService = new FileExtensionService();
         filePatternModel = new FilePatternModel();
@@ -29,7 +29,6 @@ public class FileDataFactory {
             FileData fileData = createFileData(oneFile);
             listOfFileData.add(fileData);
         }
-
         return listOfFileData;
     }
 
@@ -40,9 +39,12 @@ public class FileDataFactory {
         boolean isFileExtensionSupported = isFileExtensionSupported(fileExtension);
         byte[] realByteArray = byteReadService.getBytesOfFile(file);
 
-        String realExtension = "";
+        String realExtension = getRealExtension(realByteArray).isEmpty() ? getRealExtensionForTxtFile(realByteArray)
+                : getRealExtension(realByteArray);
 
-        return null;
+        boolean isRealExtensionSupported = !realExtension.isEmpty();
+
+        return new FileData(fileName, fileExtension, isFileExtensionSupported, realExtension, isRealExtensionSupported);
     }
 
     private boolean isFileExtensionSupported(String fileExtension) {
@@ -54,7 +56,7 @@ public class FileDataFactory {
 
         String realExtension = "";
 
-        if (byteArray.length > 0){
+        if (byteArray.length > 0) {
             int lengthOfPatternArray = 3;
             int[] realIntArray = new int[lengthOfPatternArray];
 
@@ -72,11 +74,11 @@ public class FileDataFactory {
         return realExtension;
     }
 
-    private String getRealExtensionForTxtFile(byte[] byteArray){
+    private String getRealExtensionForTxtFile(byte[] byteArray) {
 
         String realExtension = "TXT";
         int currentIntValue;
-        if (byteArray.length > 0){
+        if (byteArray.length > 0) {
             for (byte currentByteValue : byteArray) {
                 currentIntValue = Byte.toUnsignedInt(currentByteValue);
 
@@ -88,5 +90,4 @@ public class FileDataFactory {
         }
         return realExtension;
     }
-
 }

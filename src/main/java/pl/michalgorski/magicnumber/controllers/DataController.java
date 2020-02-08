@@ -44,5 +44,11 @@ public class DataController {
 
     private void createInformationAboutFiles(List<FileData> listWithFileData) {
 
+        boolean isAlwaysCorrect = true;
+
+        for (FileData oneFileData : listWithFileData) {
+            isAlwaysCorrect = checkExtensionController.checkExtensionsForFiles(oneFileData, isAlwaysCorrect);
+        }
+
     }
 }
