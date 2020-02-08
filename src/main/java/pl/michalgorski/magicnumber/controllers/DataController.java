@@ -1,5 +1,6 @@
 package pl.michalgorski.magicnumber.controllers;
 
+import pl.michalgorski.magicnumber.models.UnsupportedException;
 import pl.michalgorski.magicnumber.models.file.data.FileData;
 import pl.michalgorski.magicnumber.models.file.service.FileDataFactory;
 import pl.michalgorski.magicnumber.models.file.service.FileReadService;
@@ -50,5 +51,12 @@ class DataController {
             isAlwaysCorrect = checkExtensionController.checkExtensionsForFiles(oneFileData, isAlwaysCorrect);
         }
 
+        try{
+            if (!isAlwaysCorrect){
+                throw new UnsupportedException("There are one or more unsupported files in the source folder!");
+            }
+        } catch (UnsupportedException ex) {
+            ex.printStackTrace();
+        }
     }
 }

@@ -21,15 +21,15 @@ public class FileDataFactory {
         mapWithFilePattern = filePatternModel.getMapWithFilePattern();
     }
 
-    public List<FileData> createFileDataList(List<File> list) throws IOException {
+    public List<FileData> createFileDataList(List<File> listWithFiles) throws IOException {
 
-        List<FileData> listOfFileData = new ArrayList<>();
+        List<FileData> listWithFileData = new ArrayList<>();
 
-        for (File oneFile : list) {
+        for (File oneFile : listWithFiles) {
             FileData fileData = createFileData(oneFile);
-            listOfFileData.add(fileData);
+            listWithFileData.add(fileData);
         }
-        return listOfFileData;
+        return listWithFileData;
     }
 
     private FileData createFileData(File file) throws IOException {

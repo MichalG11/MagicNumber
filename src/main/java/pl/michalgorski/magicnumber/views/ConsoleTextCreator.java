@@ -8,23 +8,27 @@ public class ConsoleTextCreator {
         System.out.println("Podaj ścieżkę do folderu z plikami np.: \"D://folder/folder\": \n");
     }
 
-    public void bothExtSupportedAndTheSame(FileData oneFileData) {
-
+    public void bothExtSupportedAndTheSame(FileData fileData) {
+        System.out.println(fileData.getFileName() + "___THE SAME___File extension: " + fileData.getFileExtension() +
+                ", Real extension: " + fileData.getRealExtension() + " \n");
     }
 
-    public void bothExtSupportedBothDifferent(FileData oneFileData) {
-
+    public void bothExtSupportedBothDifferent(FileData fileData) {
+        System.out.println(fileData.getFileName() + "___DIFFERENT___File extension: " + fileData.getFileExtension() +
+                ", Real extension: " + fileData.getRealExtension() + " \n");
     }
 
-    public void fileExtSupportedRealExtUnsupported(FileData oneFileData) {
-
+    public void fileExtSupportedRealExtUnsupported(FileData fileData) {
+        System.out.println(fileData.getFileName() + "___DIFFERENT___File extension: " + fileData.getFileExtension() +
+                ", Real extension: UNSUPPORTED" + " \n");
     }
 
-    public void fileExtUnsupportedRealExtSupported(FileData oneFileData) {
-
+    public void fileExtUnsupportedRealExtSupported(FileData fileData) {
+        System.out.println(fileData.getFileName() + "___DIFFERENT___File extension: UNSUPPORTED "
+                + ", Real extension: " + fileData.getRealExtension() + " \n");
     }
 
-    public void bothExtUnsupported(FileData oneFileData) {
-
+    public void bothExtUnsupported(FileData fileData) {
+        System.out.println(fileData.getFileName() + "___BOTH EXTENSION UNSUPPORTED" + " \n");
     }
 }
